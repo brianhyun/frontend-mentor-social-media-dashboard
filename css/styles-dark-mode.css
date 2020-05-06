@@ -1,0 +1,554 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  align-items: center;
+  background-color: hsl(230, 17%, 14%);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  min-height: 100%;
+  padding-top: 3.5%;
+}
+
+/* Global Styles */
+
+h1, h2, h3, p {
+  font-weight: 700;
+  margin: 0;
+}
+
+body {
+  color: hsl(228, 34%, 66%);
+}
+
+.header-text, .stat-number {
+  color: hsl(0, 0%, 100%);
+}
+
+/********************* Main CSS Portion *********************/
+
+.background-top-color {
+  background-color: hsl(232, 19%, 15%);
+  border-radius: 0 0 30px 30px;
+  height: 21rem;
+  position: absolute;
+    top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5%;
+  width: 80%;
+}
+
+/********************* Top Section (includes Dashboard Header and Stats Cards) *********************/
+
+.top-section-container {
+  margin-bottom: 5.5%;
+}
+
+/* Dash Header Container */
+
+.dashboard-header-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+
+.dashboard-title p {
+  line-height: 2;
+}
+
+/* Change Modes Section */
+
+.change-modes {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.change-modes-title {
+  font-size: 0.9rem;
+  margin-right: 8%;
+  white-space: nowrap;
+}
+
+/************** Toggle Button **************/
+
+/* The switch - the box around the slider */
+.toggle-button {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.toggle-button input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  cursor: pointer;
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  background-image: linear-gradient(to right, hsl(210, 78%, 56%) 0%, hsl(146, 68%, 55%) 100%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: hsl(232, 19%, 15%);
+  content: "";
+  height: 26px;
+  position: absolute;
+    left: 4px;
+    bottom: 4px;
+  transition: .4s;
+  width: 26px;
+  -webkit-transition: .4s;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(38px);
+  -ms-transform: translateX(38px);
+  transform: translateX(38px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Dash Stats Container */
+
+.dashboard-stats-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-stats-card .header-section {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-stats-card .header-section img {
+  width: 1.3rem;
+  margin-right: 4%;
+}
+
+.dashboard-stats-card {
+  background-color: hsl(228, 28%, 20%);
+  border-radius: 5px;
+  padding: 3%;
+  text-align: center;
+  width: calc(100% / 4);
+}
+
+.dashboard-stats-card:active {
+  background-color: hsl(225, 27%, 23%);
+}
+
+.handle {
+  font-size: 0.9rem;
+}
+
+.dashboard-stats-card.facebook, .dashboard-stats-card.twitter, .dashboard-stats-card.instagram {
+  margin-right: 2%;
+}
+
+.follower-section {
+  padding: 12% 0;
+}
+
+.follower-count {
+  font-size: 3.7rem;
+}
+
+.follower-count-text {
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+/* I chose to implement the border because the border-top property curves the border downwards around the edges. I just wanted the standard rectangular border. */
+
+.dashboard-stats-card.facebook {
+  position: relative;
+}
+
+.dashboard-stats-card.facebook::before {
+    content: '';
+    background-image: linear-gradient(to right, hsl(195, 100%, 50%) 0%, hsl(195, 100%, 50%) 100%);
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+      top: 0;
+      left: 0;
+    z-index: 9999;
+}
+
+.dashboard-stats-card.twitter {
+  position: relative;
+}
+
+.dashboard-stats-card.twitter::before {
+    content: '';
+    background-image: linear-gradient(to right, hsl(203, 89%, 53%) 0%, hsl(203, 89%, 53%) 100%);
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+      top: 0;
+      left: 0;
+    z-index: 9999;
+}
+
+.dashboard-stats-card.instagram {
+  position: relative;
+}
+
+.dashboard-stats-card.instagram::before {
+    content: '';
+    background-image: linear-gradient(to right, hsl(37, 97%, 70%) 0%, hsl(329, 70%, 58%) 100%);
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+      top: 0;
+      left: 0;
+    z-index: 9999;
+}
+
+.dashboard-stats-card.youtube {
+  position: relative;
+}
+
+.dashboard-stats-card.youtube::before {
+    content: '';
+    background-image: linear-gradient(to right, hsl(348, 97%, 39%) 0%, hsl(348, 97%, 39%) 100%);
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+      top: 0;
+      left: 0;
+    z-index: 9999;
+}
+
+/* Up Down Section */
+
+.up-down-section {
+  align-items: center;
+  display: flex;
+  font-size: 0.8rem;
+  justify-content: center;
+}
+
+.up-down-section img {
+  margin-right: 3%;
+}
+
+.up-down-stat.up {
+  color: hsl(163, 72%, 41%);
+}
+
+.up-down-stat.down {
+  color: hsl(356, 69%, 56%);
+}
+
+/********************* Bottom Section (includes Overview Header and Stats Cards) *********************/
+
+.overview-stats-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.overview-header-container {
+  margin-bottom: 2%;
+}
+
+.row-1, .row-2 {
+  display: flex;
+}
+
+.row-1 {
+  margin-bottom: 2%;
+}
+
+/* Overview Stats Card Section */
+
+.overview-stats-card {
+  background-color: hsl(228, 28%, 20%);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  width: calc(100% / 4);
+}
+
+.overview-stats-card:active {
+  background-color: hsl(225, 27%, 23%);
+}
+
+.overview-stats-card.one, .overview-stats-card.two, .overview-stats-card.three {
+  margin-right: 2%;
+}
+
+.col-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.col-1 h3 {
+  font-size: 0.9rem;
+  margin-bottom: 33%;
+}
+
+.col-2 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.col-2 .icon-container img {
+  width: 1.4rem;
+}
+
+.col-2 .up-down-section img {
+  margin-right: 12%;
+}
+
+/********************* Footer Section (includes Attribution) *********************/
+
+footer {
+  padding: 3%;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/********************* Main Container Mobile Version *********************/
+
+.main-container-mobile {
+  display: none;
+}
+
+/********************* Media Queries *********************/
+
+@media (max-width: 1440px) {
+
+  /* Background Top Color */
+
+  .background-top-color {
+    height: 15.5rem;
+  }
+
+  /* Dashboard Section */
+
+  .dashboard-title .header-text {
+    font-size: 28px;
+    margin-bottom: 1%;
+  }
+
+  .change-modes-title, .dashboard-title > p {
+    font-size: 15px;
+  }
+
+  .handle {
+    font-size: 13px;
+  }
+
+  .follower-count {
+    font-size: 2.5rem;
+  }
+
+  .follower-count-text {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    padding-top: 5px;
+  }
+
+  /* Toggle Button */
+
+  .toggle-button {
+    position: relative;
+    display: inline-block;
+    width: 68px;
+    height: 28px;
+  }
+
+  .slider:before {
+    height: 22px;
+    position: absolute;
+      left: 3px;
+      bottom: 3px;
+    width: 22px;
+  }
+
+  /* Overview Section */
+
+  .overview-header-container {
+    margin-bottom: 2.3%;
+  }
+
+  .overview-header-container .header-text {
+    font-size: 25px;
+  }
+
+  .col-1 h3 {
+    font-size: 14px;
+  }
+
+  .col-1 h1 {
+    font-size: 32px;
+  }
+
+  .up-down-stat {
+    font-size: 14px;
+  }
+
+  /* Images */
+
+  .dashboard-stats-card .header-section img {
+    width: 1rem;
+    margin-right: 4%;
+  }
+
+  .col-2 .icon-container img {
+    width: 1.1rem;
+  }
+
+}
+
+@media (max-width: 375px) {
+
+  .background-top-color {
+    border-radius: 0 0 20px 20px;
+    height: 13rem;
+  }
+
+  .main-container {
+    display: none;
+  }
+
+  .main-container-mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 10% 7%;
+    width: 100%;
+  }
+
+  .dashboard-title .header-text {
+    font-size: 23px;
+  }
+
+  .dashboard-stats-container {
+    flex-direction: column;
+  }
+
+  .dashboard-header-container {
+    flex-direction: column;
+    margin-bottom: 15%;
+  }
+
+  hr {
+    color: #fff;
+    opacity: 0.1;
+    margin: 5% 0;
+    width: 100%;
+  }
+
+  /* Toggle Button */
+
+  .toggle-button {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 28px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(31px);
+    -ms-transform: translateX(31px);
+    transform: translateX(31px);
+  }
+
+  /* Dashboard Stats Card */
+
+  .dashboard-stats-card {
+    margin-bottom: 8%;
+    padding: 10%;
+    width: 100%;
+  }
+
+  .follower-section {
+    padding: 10% 0;
+  }
+
+  .follower-count {
+    font-size: 3rem;
+  }
+
+  .follower-count-text {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    padding-top: 5px;
+  }
+
+  /* Overview Section */
+  .overview-header-container .header-text {
+    margin: 8% auto;
+  }
+
+  .overview-stats-container {
+    flex-direction: column;
+  }
+
+  .overview-stats-card {
+    margin-bottom: 8%;
+    padding: 8%;
+    width: 100%;
+  }
+
+  .col-1 h3 {
+    margin-bottom: 40%;
+  }
+
+}
