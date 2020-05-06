@@ -1,7 +1,7 @@
 # Frontend Mentor Challenge - HTML/CSS/JS
 ## Social Media Dashboard Challenge
 
-[Link to Completed Web Page](https://brianhyun.github.io/frontend-mentor-social-media-dashboard)
+[Link to Completed Web Page](https://brianhyun.github.io/frontend-mentor-social-media-dashboard-challenge)
 
 The challenge was to recreate the web page as presented in the design file provided by Frontend Mentor.
 
